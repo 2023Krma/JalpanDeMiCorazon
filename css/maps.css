@@ -1,0 +1,186 @@
+/* === MÓDULO: ESTILOS GENERALES === */
+:root {
+  --primary-font: Arial, sans-serif;
+  --text-color: #333;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: #f7f7f7;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* === MÓDULO: TÍTULO DE PÁGINA === */
+.page-title {
+  background-color: #006064; /* Color para hoteles */
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-title h1 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .page-title h1 {
+    font-size: 1.25rem;
+  }
+}
+
+/* === MÓDULO: MAPA === */
+main {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#map {
+  width: 80%;
+  max-width: 1200px;
+  height: 500px;
+  border: 2px solid #333;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  background-color: #eee;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  #map {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+/* === MÓDULO: RECOMENDACIONES === */
+.recommendations {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recommendations h2 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#recommended-hotels,
+#recommended-restaurants,
+#recommended-tourism {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.place-card {
+  width: 280px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+  transform: scale(1.03);
+}
+
+.place-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.place-card h3 {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  color: #006064; /* Color consistente con .page-title para hoteles */
+  font-size: 1.25rem;
+}
+
+.place-card p {
+  padding: 0 1rem 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.place-card a {
+  display: inline-block;
+  margin: 0.5rem 1rem 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #4285F4;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.place-card a:hover {
+  background-color: #3267d6;
+}
+
+@media (max-width: 768px) {
+  .place-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* === MÓDULO: PIE DE PÁGINA === */
+footer {
+  background-color: #e0e0e0;
+  color: #444;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}
+
+/* === MÓDULO: ESTILOS ESPECÍFICOS POR PÁGINA === */
+body.section-hoteles .page-title {
+  background-color: #006064; /* Color para hoteles */
+}
+
+body.restaurantes .page-title {
+  background-color: #004d40; /* Color para restaurantes */
+}
+
+body.turismo .page-title {
+  background-color: #880e4f; /* Color para turismo */
+}
+
+body.guias .page-title {
+  background-color: #4a148c; /* Color para guías */
+}
+
+/* Estilos específicos para recomendaciones en restaurantes.html */
+body.restaurantes .recommendations h2 {
+  color: #004d40; /* Color consistente con .page-title */
+}
+
+/* Estilos específicos para recomendaciones en turismo.html */
+body.turismo .recommendations h2 {
+  color: #880e4f; /* Color consistente con .page-title */
+}
+
+/* Estilos específicos para recomendaciones en guias.html */
+body.guias .recommendations h2 {
+  color: #4a148c; /* Color consistente con .page-title */
+}
